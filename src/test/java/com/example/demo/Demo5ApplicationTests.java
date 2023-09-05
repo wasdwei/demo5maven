@@ -7,6 +7,7 @@ import com.example.demo.mybatiscatalog.Comment;
 import com.example.demo.mybatiscatalog.CommentMapper;
 import com.example.demo.mybatiscatalog.jap.Discuss;
 import com.example.demo.mybatiscatalog.jap.DiscussRepository;
+import com.example.demo.mybatiscatalog.redis.PersonRepository;
 import org.apache.catalina.User;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -36,6 +37,8 @@ class Demo5ApplicationTests {
     private ArticleMapper articleMapper;
     @Autowired
     private DiscussRepository repository;
+    @Autowired
+    private PersonRepository repositoryy;
     @Test
     void contextLoads() {
 //        System.out.println("单元测试返回的数据---" + id);
@@ -68,8 +71,11 @@ class Demo5ApplicationTests {
 //            myproperties.getResult();
 //            System.out.println();
 //        }
-
-        List<Discuss> list = repository.findByAuthorNotNull();
+//        Jap编写测试方法
+//        List<Discuss> list = repository.findByAuthorNotNull();
+//        System.out.println(list);
+//        redis编写测试方法
+        List<Person> list = repositoryy.findByAddress_City("北京");
         System.out.println(list);
     }
 }
