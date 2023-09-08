@@ -27,6 +27,11 @@ public class Family {
     public Family() {
     }
 
+    public Family(String type, String username) {
+        this.type = type;
+        this.username = username;
+    }
+
     @Override
     public String toString() {
         return "Family{" +
